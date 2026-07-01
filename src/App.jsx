@@ -51,7 +51,9 @@ function App() {
         <Route path="*" element={<div className="flex justify-center items-center h-screen text-2xl font-bold">404 - Page Not Found</div>} />
       </Route>
       {/* Full screen routes without header/footer */}
-      <Route path="/shorts" element={<Shorts />} />
+      <Route path="/flip" element={<Shorts type="news" />} />
+      <Route path="/trending" element={<Shorts type="trending" />} />
+      <Route path="/shorts" element={<Shorts type="news" />} /> {/* Keep for backwards compatibility */}
       <Route path="/login" element={<AdminLogin />} />
       
       {/* Admin Panel Routes */}

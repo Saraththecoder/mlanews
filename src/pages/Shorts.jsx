@@ -8,9 +8,12 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import MobileBottomNav from '../components/MobileBottomNav';
 
-const Shorts = () => {
+const Shorts = ({ type = 'news' }) => {
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  // Define titles based on route type
+  const headerTitle = type === 'trending' ? 'TRENDING NEWS' : 'LATEST NEWS';
 
   useEffect(() => {
     const getNews = async () => {
@@ -82,7 +85,7 @@ const Shorts = () => {
         <Link to="/" className="text-white pointer-events-auto">
           <FaArrowLeft size={20} />
         </Link>
-        <span className="text-white font-bold tracking-widest text-sm pointer-events-auto">SHORTS</span>
+        <span className="text-white font-bold tracking-widest text-sm pointer-events-auto uppercase">{headerTitle}</span>
         <div className="w-5"></div> {/* Spacer for center alignment */}
       </div>
 
