@@ -24,7 +24,7 @@ const Home = () => {
   }, []);
 
   if (loading) {
-    return <div className="flex justify-center items-center h-screen">Loading...</div>;
+    return <div className="flex justify-center items-center h-screen text-lg font-semibold text-gray-500">లోడ్ అవుతోంది...</div>;
   }
 
   const extendedNews = [...news, ...news, ...news, ...news];
@@ -51,13 +51,13 @@ const Home = () => {
         <title>Balagam TV - Telugu News Portal</title>
       </Helmet>
       
-      <div className="w-full px-4 lg:px-8 xl:px-12 pt-6 bg-white">
+      <div className="w-full px-4 lg:px-8 xl:px-12 pt-6 bg-brand-gray min-h-screen">
         
         {/* HERO SECTION */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-10">
           
           {/* Left Large Hero */}
-          <div className="lg:col-span-8 relative group overflow-hidden rounded-xl cursor-pointer shadow-md min-h-[300px] sm:min-h-[400px] lg:h-[450px]">
+          <div className="lg:col-span-8 relative group overflow-hidden rounded-2xl cursor-pointer premium-shadow min-h-[300px] sm:min-h-[400px] lg:h-[450px]">
             <Link to={`/article/${heroNews.slug}`} className="block w-full h-full">
               <img 
                 src={heroNews.image} 
@@ -85,7 +85,7 @@ const Home = () => {
           {/* Right Hero Sub Cards */}
           <div className="lg:col-span-4 flex flex-col gap-6">
             {subHeroNews.map((article, idx) => (
-              <div key={idx} className="group cursor-pointer bg-white rounded-xl shadow-md overflow-hidden flex flex-col flex-1 h-auto sm:h-[213px] min-h-[200px]">
+              <div key={idx} className="group cursor-pointer bg-white rounded-2xl premium-shadow overflow-hidden flex flex-col flex-1 h-auto sm:h-[213px] min-h-[200px] hover:-translate-y-1 transition-transform duration-300">
                 <Link to={`/article/${article.slug}`} className="h-full flex flex-col">
                   <div className="relative h-[130px] sm:h-[120px] lg:h-[130px] overflow-hidden shrink-0">
                     <img 
@@ -149,7 +149,7 @@ const Home = () => {
                   తాజా వార్తలు, ఎప్పటికప్పుడు బ్రేకింగ్ న్యూస్ కోసం మా వాట్సాప్ గ్రూప్ లో జాయిన్ అవ్వండి.
                 </p>
                 <button className="bg-white text-[#1e293b] text-sm font-bold py-2.5 px-6 rounded-full w-full flex justify-center items-center hover:bg-gray-100 transition-colors shadow-sm">
-                  <FaWhatsapp className="text-[#25D366] mr-2" size={20} /> Join Whatsapp Group
+                  <FaWhatsapp className="text-[#25D366] mr-2" size={20} /> వాట్సాప్ గ్రూప్‌లో చేరండి
                 </button>
               </div>
             </div>

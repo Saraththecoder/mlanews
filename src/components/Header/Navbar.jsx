@@ -67,8 +67,8 @@ const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
     <>
       <div
         className={cn(
-          'w-full bg-[#20297b] text-white shadow-md z-40 transition-all duration-300',
-          isSticky ? 'fixed top-0 left-0 animate-slideDown' : 'relative'
+          'w-full text-white shadow-lg z-40 transition-all duration-300 border-b border-white/10',
+          isSticky ? 'fixed top-0 left-0 animate-slideDown glass-dark' : 'relative premium-gradient'
         )}
       >
         <div className="w-full px-4 lg:px-8 xl:px-12">
@@ -122,7 +122,7 @@ const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
             className="w-[85vw] max-w-[320px] h-full bg-white text-black shadow-2xl flex flex-col transform transition-transform"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="p-4 flex justify-between items-center bg-[#20297b] text-white shadow-md shrink-0">
+            <div className="p-4 flex justify-between items-center premium-gradient text-white shadow-md shrink-0 border-b border-white/20">
               <img src="/balagam_logo_final.png" alt="Balagam TV" className="h-10 bg-white p-1 rounded object-contain" />
               <button onClick={toggleMenu} className="p-2 hover:bg-white/20 rounded"><FaTimes size={24} /></button>
             </div>
@@ -142,8 +142,8 @@ const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
                   onKeyDown={handleSearch}
                 />
               </div>
-              <button className="w-full bg-brand-red text-white text-sm font-bold py-2.5 rounded uppercase tracking-wider hover:bg-red-700 transition-colors shadow-sm">
-                Report an Issue
+              <button className="w-full bg-brand-red text-white text-sm font-bold py-2.5 rounded-lg uppercase tracking-wider hover:bg-brand-red-dark transition-colors premium-shadow">
+                సమస్యను నివేదించండి
               </button>
             </div>
 

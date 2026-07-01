@@ -1,37 +1,37 @@
 [
   {
     "id": 1,
-    "title": "Politics News",
+    "title": "రాజకీయాలు",
     "slug": "politics"
   },
   {
     "id": 2,
-    "title": "State News",
+    "title": "రాష్ట్రీయం",
     "slug": "state"
   },
   {
     "id": 3,
-    "title": "Crime",
+    "title": "క్రైమ్",
     "slug": "crime"
   },
   {
     "id": 4,
-    "title": "Sports",
+    "title": "క్రీడలు",
     "slug": "sports"
   },
   {
     "id": 5,
-    "title": "Technology",
+    "title": "టెక్నాలజీ",
     "slug": "technology"
   },
   {
     "id": 6,
-    "title": "Lifestyle",
+    "title": "జీవనశైలి",
     "slug": "lifestyle"
   },
   {
     "id": 7,
-    "title": "Local News",
+    "title": "స్థానిక వార్తలు",
     "slug": "local"
   }
 ]

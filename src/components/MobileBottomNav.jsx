@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { FaHome, FaThLarge, FaWhatsapp, FaChartLine, FaRegNewspaper, FaTimes, FaRegImage } from 'react-icons/fa';
+import { FaHome, FaThLarge, FaWhatsapp, FaChartLine, FaRegNewspaper, FaTimes, FaRegImage, FaRegPlayCircle } from 'react-icons/fa';
 
 const mobileCategories = [
   { name: 'తెలంగాణ', path: '/category/telangana' },
@@ -34,22 +34,19 @@ const MobileBottomNav = () => {
       <div className="md:hidden fixed bottom-0 left-0 w-full bg-[#111] text-gray-400 z-50 shadow-[0_-4px_10px_rgba(0,0,0,0.2)]">
       <div className="flex justify-between items-end px-2 pt-2 pb-1 relative h-[60px]">
         
-        {/* NEWS */}
         <Link to="/" className="flex flex-col items-center justify-center flex-1 hover:text-white transition-colors">
           <FaHome size={20} className="mb-1" />
-          <span className="text-[10px] font-bold">NEWS</span>
+          <span className="text-[10px] font-bold">వార్తలు</span>
         </Link>
         
-        {/* CATEGORIES */}
         <button 
           onClick={() => setIsCategoriesOpen(true)}
           className="flex flex-col items-center justify-center flex-1 hover:text-white transition-colors"
         >
           <FaThLarge size={20} className="mb-1" />
-          <span className="text-[10px] font-bold">CATEGORIES</span>
+          <span className="text-[10px] font-bold">విభాగాలు</span>
         </button>
         
-        {/* SHARE (WhatsApp Floating Button) */}
         <div className="flex-1 flex flex-col items-center justify-center relative h-full">
           <a 
             href="#" 
@@ -57,19 +54,17 @@ const MobileBottomNav = () => {
           >
             <FaWhatsapp size={24} />
           </a>
-          <span className="text-[10px] font-bold text-[#25D366] absolute bottom-1">SHARE</span>
+          <span className="text-[10px] font-bold text-[#25D366] absolute bottom-1">షేర్</span>
         </div>
         
-        {/* VIRAL */}
-        <Link to="/category/trending" className="flex flex-col items-center justify-center flex-1 hover:text-white transition-colors">
-          <FaChartLine size={20} className="mb-1" />
-          <span className="text-[10px] font-bold">VIRAL</span>
+        <Link to="/shorts" className="flex flex-col items-center justify-center flex-1 hover:text-white transition-colors">
+          <FaRegPlayCircle size={20} className="mb-1" />
+          <span className="text-[10px] font-bold">షార్ట్స్</span>
         </Link>
         
-        {/* E-PAPER */}
         <Link to="/epaper" className="flex flex-col items-center justify-center flex-1 hover:text-white transition-colors">
           <FaRegNewspaper size={20} className="mb-1" />
-          <span className="text-[10px] font-bold">E-PAPER</span>
+          <span className="text-[10px] font-bold">ఈ-పేపర్</span>
         </Link>
 
       </div>

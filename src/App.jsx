@@ -9,6 +9,7 @@ import Category from './pages/Category';
 import SingleArticle from './pages/SingleArticle';
 import Search from './pages/Search';
 import Epaper from './pages/Epaper';
+import Shorts from './pages/Shorts';
 import { About, Contact, Privacy } from './pages/StaticPages';
 
 const MainLayout = () => {
@@ -40,6 +41,8 @@ function App() {
         {/* Handle unknown routes */}
         <Route path="*" element={<div className="flex justify-center items-center h-screen text-2xl font-bold">404 - Page Not Found</div>} />
       </Route>
+      {/* Full screen routes without header/footer */}
+      <Route path="/shorts" element={<Shorts />} />
     </Routes>
   );
 }
