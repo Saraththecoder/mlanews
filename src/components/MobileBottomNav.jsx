@@ -2,22 +2,28 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaHome, FaThLarge, FaWhatsapp, FaChartLine, FaRegNewspaper, FaTimes, FaRegImage, FaRegPlayCircle } from 'react-icons/fa';
 
+import { 
+  FaMapMarkerAlt, FaMap, FaBullhorn, FaBolt, FaGavel, 
+  FaTrophy, FaHeartbeat, FaClock, FaBookOpen, FaCity, 
+  FaFlag, FaGlobe, FaBriefcase, FaMicrochip 
+} from 'react-icons/fa';
+
 const mobileCategories = [
-  { name: 'తెలంగాణ', path: '/category/telangana' },
-  { name: 'ఆంధ్రప్రదేశ్', path: '/category/andhra' },
-  { name: 'రాజకీయాలు', path: '/category/politics' },
-  { name: 'బ్రేకింగ్ న్యూస్', path: '/category/breaking' },
-  { name: 'క్రైమ్', path: '/category/crime' },
-  { name: 'క్రీడలు', path: '/category/sports' },
-  { name: 'ఆరోగ్యం', path: '/category/health' },
-  { name: 'తాజా వార్తలు', path: '/category/latest' },
-  { name: 'స్టోరీలు', path: '/category/stories' },
-  { name: 'రాష్ట్రీయం', path: '/category/state' },
-  { name: 'జాతీయం', path: '/category/national' },
-  { name: 'అంతర్జాతీయం', path: '/category/international' },
-  { name: 'ఉద్యోగం', path: '/category/jobs' },
-  { name: 'ఈ-పేపర్', path: '/epaper' },
-  { name: 'టెక్నాలజీ', path: '/category/technology' },
+  { name: 'తెలంగాణ', path: '/category/telangana', icon: FaMapMarkerAlt },
+  { name: 'ఆంధ్రప్రదేశ్', path: '/category/andhra', icon: FaMap },
+  { name: 'రాజకీయాలు', path: '/category/politics', icon: FaBullhorn },
+  { name: 'బ్రేకింగ్ న్యూస్', path: '/category/breaking', icon: FaBolt },
+  { name: 'క్రైమ్', path: '/category/crime', icon: FaGavel },
+  { name: 'క్రీడలు', path: '/category/sports', icon: FaTrophy },
+  { name: 'ఆరోగ్యం', path: '/category/health', icon: FaHeartbeat },
+  { name: 'తాజా వార్తలు', path: '/category/latest', icon: FaClock },
+  { name: 'స్టోరీలు', path: '/category/stories', icon: FaBookOpen },
+  { name: 'రాష్ట్రీయం', path: '/category/state', icon: FaCity },
+  { name: 'జాతీయం', path: '/category/national', icon: FaFlag },
+  { name: 'అంతర్జాతీయం', path: '/category/international', icon: FaGlobe },
+  { name: 'ఉద్యోగం', path: '/category/jobs', icon: FaBriefcase },
+  { name: 'ఈ-పేపర్', path: '/epaper', icon: FaRegNewspaper },
+  { name: 'టెక్నాలజీ', path: '/category/technology', icon: FaMicrochip },
 ];
 
 const MobileBottomNav = () => {
@@ -87,20 +93,23 @@ const MobileBottomNav = () => {
           {/* Grid */}
           <div className="flex-1 overflow-y-auto p-6 bg-white">
             <div className="grid grid-cols-3 gap-x-4 gap-y-6">
-              {mobileCategories.map((cat, idx) => (
-                <div 
-                  key={idx} 
-                  onClick={() => handleCategoryClick(cat.path)}
-                  className="flex flex-col items-center cursor-pointer group"
-                >
-                  <div className="w-[72px] h-[72px] bg-gray-50 rounded-2xl flex items-center justify-center mb-2 shadow-sm group-hover:bg-indigo-50 transition-colors">
-                    <FaRegImage size={24} className="text-brand-red opacity-80" />
+              {mobileCategories.map((cat, idx) => {
+                const Icon = cat.icon || FaRegImage;
+                return (
+                  <div 
+                    key={idx} 
+                    onClick={() => handleCategoryClick(cat.path)}
+                    className="flex flex-col items-center cursor-pointer group"
+                  >
+                    <div className="w-[72px] h-[72px] bg-gray-50 rounded-2xl flex items-center justify-center mb-2 shadow-sm group-hover:bg-indigo-50 transition-colors">
+                      <Icon size={24} className="text-brand-red opacity-80" />
+                    </div>
+                    <span className="text-[11px] font-bold text-gray-700 text-center leading-tight px-1">
+                      {cat.name}
+                    </span>
                   </div>
-                  <span className="text-[11px] font-bold text-gray-700 text-center">
-                    {cat.name}
-                  </span>
-                </div>
-              ))}
+                );
+              })}
             </div>
             {/* Bottom padding so we can scroll past the last items */}
             <div className="h-12"></div>
