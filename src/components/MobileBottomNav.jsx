@@ -34,7 +34,7 @@ const MobileBottomNav = () => {
       <div className="md:hidden fixed bottom-0 left-0 w-full bg-[#111] text-gray-400 z-50 shadow-[0_-4px_10px_rgba(0,0,0,0.2)]">
       <div className="flex justify-between items-end px-2 pt-2 pb-1 relative h-[60px]">
         
-        <Link to="/" className="flex flex-col items-center justify-center flex-1 hover:text-white transition-colors">
+        <Link to="/shorts" className="flex flex-col items-center justify-center flex-1 hover:text-white transition-colors">
           <FaHome size={20} className="mb-1" />
           <span className="text-[10px] font-bold">వార్తలు</span>
         </Link>
