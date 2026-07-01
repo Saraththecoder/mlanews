@@ -74,18 +74,22 @@ const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
         <div className="w-full px-4 lg:px-8 xl:px-12">
           <div className="flex justify-between items-center min-h-[52px] py-2 lg:py-0">
             {/* Desktop Menu */}
-            <nav className="hidden md:flex items-center justify-center lg:justify-between h-full w-full flex-wrap lg:flex-nowrap gap-y-2">
+            <nav ref={dropdownRef} className="hidden md:flex items-center justify-center lg:justify-between h-full w-full flex-wrap lg:flex-nowrap gap-y-2">
               {categories.map((cat, idx) => (
                 <div 
                   key={idx} 
                   className="h-full relative group shrink-0 flex items-center"
-                  onMouseEnter={() => cat.subItems && setDropdownOpen(idx)}
-                  onMouseLeave={() => cat.subItems && setDropdownOpen(null)}
                 >
                   <Link
                     to={cat.path}
+                    onClick={(e) => {
+                      if (cat.subItems) {
+                        e.preventDefault(); // Prevent navigation if they just want to open the dropdown, or maybe we want both? Actually, just toggle dropdown
+                        setDropdownOpen(dropdownOpen === idx ? null : idx);
+                      }
+                    }}
                     className={cn(
-                      'flex items-center px-2 lg:px-[10px] py-1.5 lg:py-4 h-full font-bold text-[13.5px] hover:bg-white hover:text-[#20297b] transition-colors whitespace-nowrap rounded-sm lg:rounded-none',
+                      'flex items-center px-2 lg:px-[10px] py-1.5 lg:py-4 h-full font-bold text-[13.5px] hover:bg-white hover:text-[#20297b] transition-colors whitespace-nowrap rounded-sm lg:rounded-none cursor-pointer',
                       (cat.exact ? location.pathname === cat.path : location.pathname.includes(cat.path)) ? 'bg-white text-[#20297b]' : ''
                     )}
                   >

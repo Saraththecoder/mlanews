@@ -10,6 +10,15 @@ import SingleArticle from './pages/SingleArticle';
 import Search from './pages/Search';
 import Epaper from './pages/Epaper';
 import Shorts from './pages/Shorts';
+import AdminLogin from './pages/AdminLogin';
+import AdminLayout from './layouts/AdminLayout';
+import Dashboard from './pages/admin/Dashboard';
+import NewsManagement from './pages/admin/NewsManagement';
+import BreakingNews from './pages/admin/BreakingNews';
+import Categories from './pages/admin/Categories';
+import Employees from './pages/admin/Employees';
+import CmsPages from './pages/admin/CmsPages';
+import EPaperAdmin from './pages/admin/EPaperAdmin';
 import { About, Contact, Privacy } from './pages/StaticPages';
 
 const MainLayout = () => {
@@ -43,6 +52,19 @@ function App() {
       </Route>
       {/* Full screen routes without header/footer */}
       <Route path="/shorts" element={<Shorts />} />
+      <Route path="/login" element={<AdminLogin />} />
+      
+      {/* Admin Panel Routes */}
+      <Route path="/admin" element={<AdminLayout />}>
+        <Route index element={<Dashboard />} />
+        <Route path="dashboard" element={<Dashboard />} />
+        <Route path="news" element={<NewsManagement />} />
+        <Route path="breaking-news" element={<BreakingNews />} />
+        <Route path="categories" element={<Categories />} />
+        <Route path="employees" element={<Employees />} />
+        <Route path="cms-pages" element={<CmsPages />} />
+        <Route path="epaper" element={<EPaperAdmin />} />
+      </Route>
     </Routes>
   );
 }
