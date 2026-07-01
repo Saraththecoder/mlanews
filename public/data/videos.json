@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Exclusive Interview with the Chief Minister",
+    "thumbnail": "https://images.unsplash.com/photo-1579781354186-011d7fc408f4?w=800&q=80",
+    "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "duration": "12:45"
+  },
+  {
+    "id": 2,
+    "title": "Ground Report: Floods in Northern Districts",
+    "thumbnail": "https://images.unsplash.com/photo-1547683905-f686c993aae5?w=800&q=80",
+    "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "duration": "08:20"
+  },
+  {
+    "id": 3,
+    "title": "Tech Review: The Latest Smartphone Launch",
+    "thumbnail": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&q=80",
+    "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "duration": "15:10"
+  }
+]

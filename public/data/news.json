@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "title": "Major Political Shift in the State Assembly Expected Soon",
+    "slug": "major-political-shift",
+    "image": "https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?w=800&q=80",
+    "category": "Politics",
+    "date": "2023-10-15T08:00:00Z",
+    "content": "Full article content goes here. The assembly is preparing for a major political shift...",
+    "excerpt": "The assembly is preparing for a major political shift as leaders gather.",
+    "author": "Ravi Kumar"
+  },
+  {
+    "id": 2,
+    "title": "Tech Giant Announces New AI Research Center in Hyderabad",
+    "slug": "tech-giant-ai-center",
+    "image": "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&q=80",
+    "category": "Technology",
+    "date": "2023-10-14T10:30:00Z",
+    "content": "Hyderabad is set to become the next major hub for AI...",
+    "excerpt": "A major tech company has announced the opening of a new AI research center.",
+    "author": "Tech Desk"
+  },
+  {
+    "id": 3,
+    "title": "Local Sports Team Wins National Championship",
+    "slug": "local-sports-win",
+    "image": "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&q=80",
+    "category": "Sports",
+    "date": "2023-10-13T16:45:00Z",
+    "content": "In a stunning victory, the local team clinched the national title...",
+    "excerpt": "The city celebrates as our team brings home the national trophy.",
+    "author": "Sports Editor"
+  },
+  {
+    "id": 4,
+    "title": "New Traffic Regulations Implemented in City Limits",
+    "slug": "new-traffic-regulations",
+    "image": "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&q=80",
+    "category": "Local News",
+    "date": "2023-10-12T09:15:00Z",
+    "content": "Commuters need to be aware of the new traffic rules starting today...",
+    "excerpt": "City police announce new traffic guidelines to ease congestion.",
+    "author": "City Desk"
+  },
+  {
+    "id": 5,
+    "title": "Upcoming Telugu Movie Teaser Breaks Internet Records",
+    "slug": "telugu-movie-teaser-records",
+    "image": "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=800&q=80",
+    "category": "Entertainment",
+    "date": "2023-10-11T18:20:00Z",
+    "content": "The much-awaited teaser of the upcoming blockbuster has shattered all previous records...",
+    "excerpt": "Fans go wild as the new movie teaser crosses 50 million views in 24 hours.",
+    "author": "Cinema Desk"
+  },
+  {
+    "id": 6,
+    "title": "Health Benefits of the Traditional South Indian Diet",
+    "slug": "health-benefits-south-indian-diet",
+    "image": "https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?w=800&q=80",
+    "category": "Lifestyle",
+    "date": "2023-10-10T07:00:00Z",
+    "content": "Nutritionists are highlighting the numerous health benefits of traditional foods...",
+    "excerpt": "Why you should consider incorporating more traditional meals into your diet.",
+    "author": "Health Editor"
+  }
+]

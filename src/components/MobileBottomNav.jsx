@@ -1,0 +1,119 @@
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { FaHome, FaThLarge, FaWhatsapp, FaChartLine, FaRegNewspaper, FaTimes, FaRegImage } from 'react-icons/fa';
+
+const mobileCategories = [
+  { name: 'తెలంగాణ', path: '/category/telangana' },
+  { name: 'ఆంధ్రప్రదేశ్', path: '/category/andhra' },
+  { name: 'రాజకీయాలు', path: '/category/politics' },
+  { name: 'బ్రేకింగ్ న్యూస్', path: '/category/breaking' },
+  { name: 'క్రైమ్', path: '/category/crime' },
+  { name: 'క్రీడలు', path: '/category/sports' },
+  { name: 'ఆరోగ్యం', path: '/category/health' },
+  { name: 'తాజా వార్తలు', path: '/category/latest' },
+  { name: 'స్టోరీలు', path: '/category/stories' },
+  { name: 'రాష్ట్రీయం', path: '/category/state' },
+  { name: 'జాతీయం', path: '/category/national' },
+  { name: 'అంతర్జాతీయం', path: '/category/international' },
+  { name: 'ఉద్యోగం', path: '/category/jobs' },
+  { name: 'ఈ-పేపర్', path: '/epaper' },
+  { name: 'టెక్నాలజీ', path: '/category/technology' },
+];
+
+const MobileBottomNav = () => {
+  const [isCategoriesOpen, setIsCategoriesOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleCategoryClick = (path) => {
+    setIsCategoriesOpen(false);
+    navigate(path);
+  };
+
+  return (
+    <>
+      <div className="md:hidden fixed bottom-0 left-0 w-full bg-[#111] text-gray-400 z-50 shadow-[0_-4px_10px_rgba(0,0,0,0.2)]">
+      <div className="flex justify-between items-end px-2 pt-2 pb-1 relative h-[60px]">
+        
+        {/* NEWS */}
+        <Link to="/" className="flex flex-col items-center justify-center flex-1 hover:text-white transition-colors">
+          <FaHome size={20} className="mb-1" />
+          <span className="text-[10px] font-bold">NEWS</span>
+        </Link>
+        
+        {/* CATEGORIES */}
+        <button 
+          onClick={() => setIsCategoriesOpen(true)}
+          className="flex flex-col items-center justify-center flex-1 hover:text-white transition-colors"
+        >
+          <FaThLarge size={20} className="mb-1" />
+          <span className="text-[10px] font-bold">CATEGORIES</span>
+        </button>
+        
+        {/* SHARE (WhatsApp Floating Button) */}
+        <div className="flex-1 flex flex-col items-center justify-center relative h-full">
+          <a 
+            href="#" 
+            className="absolute -top-[28px] left-1/2 -translate-x-1/2 bg-[#25D366] text-white p-3.5 rounded-full border-[5px] border-[#111] shadow-lg hover:scale-105 transition-transform"
+          >
+            <FaWhatsapp size={24} />
+          </a>
+          <span className="text-[10px] font-bold text-[#25D366] absolute bottom-1">SHARE</span>
+        </div>
+        
+        {/* VIRAL */}
+        <Link to="/category/trending" className="flex flex-col items-center justify-center flex-1 hover:text-white transition-colors">
+          <FaChartLine size={20} className="mb-1" />
+          <span className="text-[10px] font-bold">VIRAL</span>
+        </Link>
+        
+        {/* E-PAPER */}
+        <Link to="/epaper" className="flex flex-col items-center justify-center flex-1 hover:text-white transition-colors">
+          <FaRegNewspaper size={20} className="mb-1" />
+          <span className="text-[10px] font-bold">E-PAPER</span>
+        </Link>
+
+      </div>
+    </div>
+
+      {/* Categories Modal Overlay */}
+      {isCategoriesOpen && (
+        <div className="md:hidden fixed inset-0 z-[60] bg-white flex flex-col animate-slideUp overflow-hidden">
+          {/* Header */}
+          <div className="flex justify-between items-center p-6 pb-4 border-b border-gray-50">
+            <h2 className="text-xl font-bold text-gray-900 tracking-wide">వార్తా విభాగాలు (Live)</h2>
+            <button 
+              onClick={() => setIsCategoriesOpen(false)}
+              className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-gray-200"
+            >
+              <FaTimes size={18} />
+            </button>
+          </div>
+          
+          {/* Grid */}
+          <div className="flex-1 overflow-y-auto p-6 bg-white">
+            <div className="grid grid-cols-3 gap-x-4 gap-y-6">
+              {mobileCategories.map((cat, idx) => (
+                <div 
+                  key={idx} 
+                  onClick={() => handleCategoryClick(cat.path)}
+                  className="flex flex-col items-center cursor-pointer group"
+                >
+                  <div className="w-[72px] h-[72px] bg-gray-50 rounded-2xl flex items-center justify-center mb-2 shadow-sm group-hover:bg-indigo-50 transition-colors">
+                    <FaRegImage size={24} className="text-brand-red opacity-80" />
+                  </div>
+                  <span className="text-[11px] font-bold text-gray-700 text-center">
+                    {cat.name}
+                  </span>
+                </div>
+              ))}
+            </div>
+            {/* Bottom padding so we can scroll past the last items */}
+            <div className="h-12"></div>
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
+
+export default MobileBottomNav;
